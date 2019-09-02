@@ -1,37 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
 import Child from "./Child";
+import Button from "./components/Button/Button";
+import ButtonGroup from "./components/Button/ButtonGroup";
+import CheckBox from "./components/CheckBox/CheckBox";
+import CheckBoxGroup from "./components/CheckBox/CheckBoxGroup";
+import Radio from "./components/Radio/Radio";
+import RadioGroup from "./components/Radio/radio-group";
+import Affix from "./components/Affix/Affix";
+import Switch from "./components/Switch/Switch";
+import BackTop from "./components/BackTop/BackTop";
+
 import './App.css';
+import './app.scss';
 
 export default class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
   }
-  parentTest=()=>{
+
+  parentTest = () => {
     console.log(this.child);
     this.child.test();
   };
+
   render() {
     return (
       <div className="App">
-        <Child ref={(child) => {this.child = child}}>
-
+        <Child ref={(child) => {
+          this.child = child
+        }}>
         </Child>
-        <button onClick={this.parentTest}>测试按钮</button>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo"/>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <hr/>
+        <Button className="mine" disabled>默认测试按钮</Button>
+        <hr/>
+        <ButtonGroup>
+          <Button>测试按钮组一</Button>
+          <Button>测试按钮组二</Button>
+        </ButtonGroup>
+        <hr/>
+        <Radio checked label={'测试radio'}>
+
+        </Radio>
+        <hr/>
+        <Switch>
+
+        </Switch>
       </div>
     );
   }
