@@ -11,6 +11,7 @@ export default class Pager extends React.Component {
     return (
       <div>
 
-      </div>)
+      </div>
+    )
   }
 }

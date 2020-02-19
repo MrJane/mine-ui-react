@@ -15,3 +15,9 @@ export default class Card extends React.Component {
       </div>)
   }
 }
+Card.propTypes = {
+  //是否有边框
+  bordered:PropTypes.bool,
+  //卡片标题
+  title:PropTypes.string
+};

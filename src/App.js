@@ -9,7 +9,9 @@ import RadioGroup from "./components/Radio/radio-group";
 import Affix from "./components/Affix/Affix";
 import Switch from "./components/Switch/Switch";
 import BackTop from "./components/BackTop/BackTop";
-
+import Slider from "./components/Slider/Slider";
+import Input from "./components/Input/Input";
+import Icon from "./components/Icon/Icon";
 import './App.css';
 import './app.scss';
 
@@ -18,10 +20,15 @@ export default class App extends React.Component {
     super(props)
   }
 
-  parentTest = () => {
+  parentTest() {
     console.log(this.child);
     this.child.test();
-  };
+  }
+
+  onChange(e) {
+    console.log('我是父元素的打印',e);
+
+  }
 
   render() {
     return (
@@ -45,6 +52,25 @@ export default class App extends React.Component {
         <Switch>
 
         </Switch>
+        <hr/>
+        <div style={{width: '605px', marginTop: '20px'}}>
+          <Slider>
+
+          </Slider>
+        </div>
+        <hr/>
+        <div style={{marginTop: '20px'}}>
+          <Input
+            onChange={this.onChange.bind(this)}
+            placeholder={'请输入文字...'}
+            defaultValue={'hello world'}
+          >
+
+          </Input>
+          <Icon type="iconcheck">
+
+          </Icon>
+        </div>
       </div>
     );
   }
